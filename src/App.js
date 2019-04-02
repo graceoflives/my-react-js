@@ -4,18 +4,13 @@ import './App.css';
 import ThemeChanger from './components/ThemeChanger';
 import Style from './components/Style';
 import ThemeDisplay from './components/ThemeDisplay';
-import * as Constants from './constants';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as themeChanger from './redux/actions/themeChanger.actions';
-import _ from 'lodash';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            activeTheme: Constants.themes[0]
-        };
         this._onChangeActiveTheme = this._onChangeActiveTheme.bind(this);
     }
 
@@ -25,7 +20,7 @@ class App extends React.Component {
     }
 
     render() {
-        const activeTheme = _.isEmpty(this.props.activeTheme) ? this.state.activeTheme : this.props.activeTheme;
+        const {activeTheme} = this.props;
         return (
             <div className={'container-fluid'}>
                 <h1 className={'page-header'}>My Simple Page</h1>

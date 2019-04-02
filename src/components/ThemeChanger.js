@@ -1,5 +1,5 @@
 import React from 'react';
-import * as Constants from '../constants';
+import * as Constants from '../Constants';
 import _ from 'lodash';
 
 export default class ThemeChanger extends React.Component {
